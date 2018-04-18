@@ -1,3 +1,5 @@
 # Miscellaneous_Image_Analysis
 
 The folder **Lm Foci Counting Elbow** contains the files needed to cluster bacterial foci using the Elbow Method of K-means clustering. More details inside.
+
+The folder **NearestNeighborIndex** contains the files needed to calculate the NNI for an image of bacteria in a field of host cell nuclei. The main file is **bacteriaNNI.m**, which calls on **nearestneighbor.m** and uses **Test.tif** as an input test image. Bacteria and nuclei are thresholded using Otsu’s method (Sezgin and Sankur, 2004) and segmented using the distance transform (Maurer and Raghavan, 2003). Object segmentation was used to determine the number of bacteria or nuclei per image. To calculate the nearest neighbor index (Clark and Evans, 1954). To calculate the NNI, where NNI = D/(0.5*sqrt(A/N)), we calculate D (average of the distances of each bacterium to its nearest neighbor), A (the area occupied by the host cells), and N (the number of bacteria adhered to the monolayer). To calculate D, the Euclidean distance between each bacterium’s centroid and its closest neighbor was measured and averaged for all the bacteria in a single image.
